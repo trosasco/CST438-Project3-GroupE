@@ -15,5 +15,5 @@ The minimum viable product for our project means that a user will be able to sea
 
 ## Technologies
 
-* [Android]https://www.android.com/
-* [Android Studio]https://developer.android.com/studio
+* [Android](https://www.android.com/)
+* [Android Studio](https://developer.android.com/studio)
