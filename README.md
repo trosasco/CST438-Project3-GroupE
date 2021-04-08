@@ -6,7 +6,7 @@ Our project is an Android app that can be used to search for different types/cat
 Our team is made up of: 
 * Matthew Reyes, [Xenvex](https://github.com/Xenvex)
 * Christopher Cisneros, [ChrisCisneros](https://github.com/ChrisCisneros)
-* Annthony Perez, [pere9797](https://github.com/pere9797)
+* Anthony Perez, [pere9797](https://github.com/pere9797)
 * Tessa Rosasco, [trosasco](https://github.com/trosasco)
 
 ## Minimum Viable Product
