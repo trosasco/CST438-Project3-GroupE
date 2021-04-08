@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
                 newUserName = tempNewUserName.getText().toString();
                 newPassWord = tempNewPassWord.getText().toString();
 
-                Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
                 newIntent.putExtra("username", newUserName);
                 startActivity(newIntent);
             }
