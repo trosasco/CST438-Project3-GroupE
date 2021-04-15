@@ -36,4 +36,4 @@ The minimum viable product for our project means that a user will be able to sea
 
 * [Android](https://www.android.com/)
 * [Android Studio](https://developer.android.com/studio)
-* [Firestore](https://firebase.google.com/docs/firestore)
+* [Firebase](https://firebase.google.com/)
