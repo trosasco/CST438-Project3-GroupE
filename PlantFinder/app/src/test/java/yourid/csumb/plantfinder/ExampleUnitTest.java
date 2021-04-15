@@ -14,4 +14,10 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test(expected = NullPointerException.class)
+    public void nullStringTest() {
+        String str = null;
+        assertTrue(str.isEmpty());
+    }
 }
