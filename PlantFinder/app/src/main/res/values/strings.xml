@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Plant Finder</string>
 
+    <string name="logout">Logout</string>
+    <string name="editAccount">Edit Account</string>
+    <string name="Search">Search</string>
+
     <string name="enter_username">Enter your username here</string>
     <string name="enter_password">Enter your password here</string>
     <string name="login">Login</string>
