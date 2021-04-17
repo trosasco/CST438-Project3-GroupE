@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "328179184964",
+    "project_id": "group-e-cst-438-project-3",
+    "storage_bucket": "group-e-cst-438-project-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328179184964:android:860e51074da1aa672c9311",
+        "android_client_info": {
+          "package_name": "yourid.csumb.plantfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328179184964-is0898a5voigabmqnrosc3q4b15jfsh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoKOQMv4KSjiqTs2rhKpV46JAsPzXYfO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328179184964-is0898a5voigabmqnrosc3q4b15jfsh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
