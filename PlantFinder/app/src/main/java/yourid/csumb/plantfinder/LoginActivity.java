@@ -2,17 +2,31 @@ package yourid.csumb.plantfinder;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
+import java.util.List;
+
+import yourid.csumb.plantfinder.model.Account;
+import yourid.csumb.plantfinder.model.AccountDao;
+import yourid.csumb.plantfinder.model.AccountDatabase;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private AccountDao accountDAO;
+    List<Account> accounts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getDataBase();
+        getUsers();
 
 
         Button enterButton = findViewById(R.id.enter_button);
@@ -30,11 +44,30 @@ public class LoginActivity extends AppCompatActivity {
                 newUserName = tempNewUserName.getText().toString();
                 newPassWord = tempNewPassWord.getText().toString();
 
+                //Verify that this isn't already a username
+
+                Log.i("Check", "Checking!");
+
+                //Move to Next Activity
                 Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
                 newIntent.putExtra("username", newUserName);
-                startActivity(newIntent);
+                //startActivity(newIntent);
+                //startActivity(newIntent);
             }
         });
 
     }
+
+    private void getUsers(){
+        accounts = accountDAO.getAll();
+    }
+
+
+    public void getDataBase(){
+        accountDAO = Room.databaseBuilder(this, AccountDatabase.class, AccountDatabase.name)
+                .allowMainThreadQueries()
+                .build()
+                .account();
+    }
+
 }
