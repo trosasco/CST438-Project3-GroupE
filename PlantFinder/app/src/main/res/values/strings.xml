@@ -3,6 +3,7 @@
 
     <string name="logout">Logout</string>
     <string name="editAccount">Edit Account</string>
+    <string name="createAccount">Create Account</string>
     <string name="Search">Search</string>
 
     <string name="enter_username">Enter your username here</string>
