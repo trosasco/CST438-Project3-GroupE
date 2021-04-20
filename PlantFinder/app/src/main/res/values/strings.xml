@@ -11,4 +11,6 @@
 
     <string name="profileBio">Add something to your bio!</string>
     <string name="editProfile">Edit Profile</string>
+    <string name="bioHint">Start typing here</string>
+    <string name="saveButton">Save</string>
 </resources>
