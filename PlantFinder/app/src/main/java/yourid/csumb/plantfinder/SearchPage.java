@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +24,8 @@ public class SearchPage extends AppCompatActivity {
                 EditText keyWords = findViewById(R.id.search_entry);
 
             //Redirect to another page or display posts on the same page?
-
+                TextView results = (TextView) findViewById(R.id.results);
+                results.setText(keyWords.getText().toString());
 
             }
 
