@@ -5,6 +5,7 @@ import yourid.csumb.plantfinder.model.AccountDatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,15 +18,19 @@ import java.util.List;
 public class CreateAccountActivity extends AppCompatActivity {
     private Account account;
     private AccountDao accountDAO;
+    private String newUserName;
+    private Account userCheck;
     List<Account> accounts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("Check", "onCreate: HELLO");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
         getDataBase();
         getUsers();
         createAccount();
+        checkDatabase();
     }
 
     private void getUsers(){
@@ -59,6 +64,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 boolean check = false;
 
                 //Checking for Duplicate Usernames
+                /*
                 for(int i = 0; i < accountDAO.getAll().size(); i++){
                     if(accounts.get(i).getUserName().equals(newUserName)){
                         check = true;
@@ -66,7 +72,9 @@ public class CreateAccountActivity extends AppCompatActivity {
                     }
                 }
 
-                if(!check)
+                 */
+                check = checkUsername();
+                if(check)
                 {
                     //New Username
                     accountDAO.addAccount(new Account(newUserName, newPassWord));
@@ -84,4 +92,25 @@ public class CreateAccountActivity extends AppCompatActivity {
         });
 
     }
+
+    //Check for Duplicates
+    private boolean checkUsername(){
+        userCheck = accountDAO.getUserbyUsername(newUserName);
+
+        if(userCheck == null)
+        {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    //Check Stuff
+    private void checkDatabase(){
+        for(int i = 0; i < accounts.size(); i++){
+            Log.d("User", accounts.get(i).getUserName());
+        }
+    }
+
 }

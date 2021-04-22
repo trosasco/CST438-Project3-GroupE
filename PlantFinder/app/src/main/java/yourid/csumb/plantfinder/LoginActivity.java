@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
                 newIntent.putExtra("username", newUserName);
                 //startActivity(newIntent);
-                //startActivity(newIntent);
             }
         });
 

@@ -22,7 +22,7 @@ public interface AccountDao {
     List<Account> getAll();
 
     @Query("SELECT * FROM accounts WHERE name=:username")
-    Account getAccountInfo(String username);
+    Account getUserbyUsername(String username);
 
     @Delete
     void delete(Account account);
