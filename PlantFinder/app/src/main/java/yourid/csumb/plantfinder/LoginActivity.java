@@ -48,10 +48,19 @@ public class LoginActivity extends AppCompatActivity {
 
                 Log.i("Check", "Checking!");
 
-                //Move to Next Activity
-                Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
-                newIntent.putExtra("username", newUserName);
-                //startActivity(newIntent);
+                if(newUserName.equals("admin") && newPassWord.equals("password"))
+                {
+                    //Admin Login
+                    Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
+                    newIntent.putExtra("username", newUserName);
+                    startActivity(newIntent);
+                }
+                else {
+                    //Normal Login
+                    Intent newIntent = new Intent(getApplicationContext(), SearchPage.class);
+                    newIntent.putExtra("username", newUserName);
+                    startActivity(newIntent);
+                }
             }
         });
 
