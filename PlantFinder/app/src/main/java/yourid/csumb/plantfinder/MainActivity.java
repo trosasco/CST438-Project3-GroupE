@@ -1,18 +1,34 @@
 package yourid.csumb.plantfinder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.view.MenuItem;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     Button create;
     Button search;
     Button login;
+
+    private HomeFragment home = new HomeFragment();
+    private SearchFragment searchPlants = new SearchFragment();
+    private ProfileFragment profile = new ProfileFragment();
+
+    private Fragment activeFragment = null;
+    private FragmentManager manager;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +39,17 @@ public class MainActivity extends AppCompatActivity {
         search = findViewById(R.id.search);
         login = findViewById(R.id.login);
 
+        bottomNavigationView = findViewById(R.id.bottomNavigationView); //step 7
+
+
+        setUpBottomNavigation();
+        addAllFragmentOnce();
+
         create.setOnClickListener(view -> createAccount());
         search.setOnClickListener(view -> searchPlants());
         login.setOnClickListener(view -> signIn());
     }
+
 
     public void createAccount(){
         create.setOnClickListener(new View.OnClickListener() {
@@ -58,4 +81,68 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setUpBottomNavigation() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        manager = getSupportFragmentManager();
+        activeFragment = home;
+    }
+
+    private void addAllFragmentOnce() {
+
+        manager.beginTransaction()
+                .add(R.id.flFragment, activeFragment)
+                .commit();
+
+        manager.beginTransaction()
+                .add(R.id.flFragment, searchPlants)
+                .hide(searchPlants)
+                .commit();
+
+        manager.beginTransaction()
+                .add(R.id.flFragment, profile)
+                .hide(profile)
+                .commit();
+
+    }
+
+    private void showHideFragment(Fragment fragment) {
+        manager.beginTransaction()
+                .hide(activeFragment)
+                .show(fragment)
+                .commit();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.home:
+                clearBackStack();
+                showHideFragment(home);
+                activeFragment = home;
+                break;
+
+            case R.id.search:
+                clearBackStack();
+                showHideFragment(searchPlants);
+                activeFragment = searchPlants;
+                break;
+
+            case R.id.person:
+                clearBackStack();
+                showHideFragment(profile);
+                activeFragment = profile;
+                break;
+
+        }
+        return true;
+    }
+
+
+    private void clearBackStack() {
+        FragmentManager fm = this.getSupportFragmentManager();
+        for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+            fm.popBackStack();
+        }
+    }
 }
