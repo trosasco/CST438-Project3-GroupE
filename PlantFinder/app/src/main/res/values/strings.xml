@@ -3,6 +3,7 @@
 
     <string name="logout">Logout</string>
     <string name="editAccount">Edit Account</string>
+    <string name="createAccount">Create Account</string>
     <string name="Search">Search</string>
 
     <string name="enter_username">Enter your username here</string>
@@ -15,4 +16,7 @@
     <string name="hello_home_fragment">Hello home fragment</string>
     <string name="hello_search_fragment">Hello search fragment</string>
     <string name="hello_account_fragment">Hello account fragment</string>
+
+    <string name="bioHint">Start typing here</string>
+    <string name="saveButton">Save</string>
 </resources>

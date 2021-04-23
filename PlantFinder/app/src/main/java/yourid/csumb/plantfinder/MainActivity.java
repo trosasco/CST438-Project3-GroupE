@@ -5,17 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.MenuItem;
+
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    Button edit;
+    Button create;
     Button search;
-    Button logout;
+    Button login;
 
     private HomeFragment home = new HomeFragment();
     private SearchFragment searchPlants = new SearchFragment();
@@ -30,9 +35,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edit = findViewById(R.id.editAcc);
+        create = findViewById(R.id.createAcc);
         search = findViewById(R.id.search);
-        logout = findViewById(R.id.logout);
+        login = findViewById(R.id.login);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView); //step 7
 
@@ -40,21 +45,40 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setUpBottomNavigation();
         addAllFragmentOnce();
 
-        edit.setOnClickListener(view -> editAccount());
+        create.setOnClickListener(view -> createAccount());
         search.setOnClickListener(view -> searchPlants());
-        logout.setOnClickListener(view -> signOut());
+        login.setOnClickListener(view -> signIn());
     }
 
-    public void editAccount() {
 
+    public void createAccount(){
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), CreateAccountActivity.class);
+                startActivity(startIntent);
+            }
+        });
     }
 
-    public void searchPlants() {
-
+    public void searchPlants(){
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), SearchPage.class);
+                startActivity(startIntent);
+            }
+        });
     }
 
-    public void signOut() {
-
+    public void signIn(){
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(startIntent);
+            }
+        });
     }
 
     private void setUpBottomNavigation() {

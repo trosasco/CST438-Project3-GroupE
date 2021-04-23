@@ -19,11 +19,11 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
-        android:id="@+id/editAcc"
+        android:id="@+id/createAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="@string/editAccount"
+        android:text="@string/createAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -36,14 +36,14 @@
         android:text="@string/Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAcc" />
+        app:layout_constraintTop_toBottomOf="@+id/createAcc" />
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="@string/logout"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search" />
