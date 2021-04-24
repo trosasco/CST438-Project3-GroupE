@@ -14,4 +14,9 @@
     <string name="editProfile">Edit Profile</string>
     <string name="bioHint">Start typing here</string>
     <string name="saveButton">Save</string>
+
+    <string name="addUsers">Add user</string>
+    <string name="editUser">Edit user</string>
+    <string name="newUsernameHint">Enter the username here</string>
+    <string name="newPasswordHint">Enter the password here</string>
 </resources>

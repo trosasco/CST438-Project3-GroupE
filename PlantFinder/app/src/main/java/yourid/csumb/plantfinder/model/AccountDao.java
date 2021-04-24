@@ -13,17 +13,21 @@ import java.util.List;
 public interface AccountDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addAccount(Account account);
+    void insert(Account... account);
 
     @Update
-    void update(Account account);
-
-    @Query("SELECT * FROM accounts")
-    List<Account> getAll();
-
-    @Query("SELECT * FROM accounts WHERE name=:username")
-    Account getUserbyUsername(String username);
+    void update(Account... account);
 
     @Delete
-    void delete(Account account);
+    void delete(Account... account);
+
+    @Query(" SELECT * FROM " + AccountDatabase.USER_TABLE)
+    List<Account> getAll();
+
+    @Query("SELECT * FROM " + AccountDatabase.USER_TABLE + " WHERE mUserName=:username")
+    Account getUserByUsername(String username);
+
+    @Query("SELECT * FROM " + AccountDatabase.USER_TABLE + " WHERE mUserId=:userId")
+    Account getUsersByUserId(int userId);
+
 }
