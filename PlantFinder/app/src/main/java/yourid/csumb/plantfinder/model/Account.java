@@ -16,10 +16,13 @@ public class Account implements Serializable {
     private String mUserPassword;
     private boolean isAdmin;
 
+    private String mBio;
+
     public Account(String mUserName, String mUserPassword, boolean isAdmin) {
         this.mUserName = mUserName;
         this.mUserPassword = mUserPassword;
         this.isAdmin = isAdmin;
+        this.mBio = "";
     }
 
     public boolean isAdmin() { return isAdmin; }
@@ -48,6 +51,14 @@ public class Account implements Serializable {
 
     public void setUserPassword(String userPassword) {
         this.mUserPassword = userPassword;
+    }
+
+    public String getBio() {
+        return mBio;
+    }
+
+    public void setBio(String bio) {
+        mBio = bio;
     }
 
     @NonNull

@@ -92,7 +92,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                         editor.apply();
 
                         //when account is created, it takes you back to the main activity
-                        Intent i = SearchPage.intentFactory(getApplicationContext(), mAccount.getUserId());
+                        Intent i = HomePageActivity.intentFactory(getApplicationContext(), mAccount.getUserId());
                         startActivity(i);
                     }
 

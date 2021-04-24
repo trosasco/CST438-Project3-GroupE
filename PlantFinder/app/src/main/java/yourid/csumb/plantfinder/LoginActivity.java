@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putBoolean(ADMIN, mAccount.isAdmin());
                     editor.apply();
 
-                    Intent intent = SearchPage.intentFactory(getApplicationContext(), mAccount.getUserId());
+                    Intent intent = HomePageActivity.intentFactory(getApplicationContext(), mAccount.getUserId());
                     startActivity(intent);
                 }
             }

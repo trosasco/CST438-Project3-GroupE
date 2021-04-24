@@ -18,13 +18,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.List;
 
 import yourid.csumb.plantfinder.model.Account;
 import yourid.csumb.plantfinder.model.AccountDao;
 import yourid.csumb.plantfinder.model.AccountDatabase;
 
-public class MainActivity extends AppCompatActivity {
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
