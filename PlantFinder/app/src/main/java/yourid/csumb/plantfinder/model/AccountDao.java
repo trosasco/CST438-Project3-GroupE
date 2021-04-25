@@ -29,5 +29,4 @@ public interface AccountDao {
 
     @Query("SELECT * FROM " + AccountDatabase.USER_TABLE + " WHERE mUserId=:userId")
     Account getUsersByUserId(int userId);
-
 }
