@@ -1,49 +1,75 @@
 package yourid.csumb.plantfinder.model;
 
-import androidx.room.ColumnInfo;
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 
-@Entity(tableName = "accounts")
-public class Account {
+@Entity(tableName = AccountDatabase.USER_TABLE)
+public class Account implements Serializable {
 
-    @PrimaryKey
-    private int id;
+    @PrimaryKey(autoGenerate = true)
+    private int mUserId;
 
-    @ColumnInfo(name = "name")
-    private String userName;
+    private String mUserName;
+    private String mUserPassword;
+    private boolean isAdmin;
 
-    @ColumnInfo(name = "password")
-    private String userPassword;
+    private String mBio;
 
-    public int getId() {
-        return this.id;
+    public Account(String mUserName, String mUserPassword, boolean isAdmin) {
+        this.mUserName = mUserName;
+        this.mUserPassword = mUserPassword;
+        this.isAdmin = isAdmin;
+        this.mBio = "";
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public boolean isAdmin() { return isAdmin; }
+
+    public void setAdmin(boolean admin) { isAdmin = admin; }
+
+    public int getUserId() {
+        return mUserId;
+    }
+
+    public void setUserId(int mUserId) {
+        this.mUserId = mUserId;
     }
 
     public String getUserName() {
-        return userName;
+        return mUserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String mUserName) {
+        this.mUserName = mUserName;
     }
 
     public String getUserPassword() {
-        return this.userPassword;
+        return mUserPassword;
     }
 
     public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+        this.mUserPassword = userPassword;
     }
 
-    public Account(String userName, String userPassword) {
-        this.userName = userName;
-        this.userPassword = userPassword;
+    public String getBio() {
+        return mBio;
+    }
+
+    public void setBio(String bio) {
+        mBio = bio;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        String output;
+
+        output = mUserName + "'s password is: ";
+        output += "\n" + mUserPassword;
+
+        return output;
     }
 
 }

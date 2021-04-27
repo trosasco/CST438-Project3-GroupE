@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <TextView
+        android:id="@+id/list_user_string"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:gravity="start"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/delete_btn"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/edit_btn"
+        android:onClick="deleteItem"
+        android:src="@drawable/ic_delete"
+        android:layout_toEndOf="@id/edit_btn" />
+
+    <ImageButton
+        android:id="@+id/edit_btn"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/list_user_string"
+        android:onClick="editItem"
+        android:src="@drawable/ic_edit"
+        android:layout_toEndOf="@id/list_user_string" />
+
+</RelativeLayout>
