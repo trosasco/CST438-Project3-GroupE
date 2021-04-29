@@ -16,19 +16,19 @@ public class PlantList implements Serializable {
     private int userID;
 
     private String plantListName;
-    private List<String> Plants; //List of Plants in the List
+    //private List<String> Plants; //List of Plants in the List
 
-    public PlantList(int userID, String plantListName, List<String> Plants){
+    public PlantList(int userID, String plantListName){//, List<String> Plants){
         this.userID = userID;
         this.plantListName = plantListName;
-        this.Plants = Plants;
+        //this.Plants = Plants;
     }
 
     public int getPlantListId(){ return plantListId; }
 
-    public List<String> getPlants(){ return Plants;}
+    //public List<String> getPlants(){ return Plants;}
 
-    public int getUserId() {
+    public int getUserID() {
         return userID;
     }
 
@@ -36,7 +36,7 @@ public class PlantList implements Serializable {
 
     public void setPlantListId(int plantListId){ this.plantListId = plantListId; }
 
-    public void setPlants(List<String> plants){ this.Plants = plants; }
+    //public void setPlants(List<String> plants){ this.Plants = plants; }
 
     public void setUserId(int userID) {
         this.userID = userID;

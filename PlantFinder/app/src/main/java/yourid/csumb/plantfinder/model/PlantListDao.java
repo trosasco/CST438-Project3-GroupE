@@ -24,6 +24,6 @@ public interface PlantListDao {
     @Query(" SELECT * FROM " + PlantListDatabase.PL_TABLE)
     List<PlantList> getAll();
 
-    @Query("SELECT * FROM " + PlantListDatabase.PL_TABLE + " WHERE plantListName=:listName")
-    Account getListByListname(String listName);
+    //@Query("SELECT * FROM " + PlantListDatabase.PL_TABLE + " WHERE plantListName=:listName")
+    //Account getListByListname(String listName);
 }
