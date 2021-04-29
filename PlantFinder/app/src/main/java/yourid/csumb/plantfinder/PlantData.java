@@ -4,8 +4,8 @@ import androidx.room.PrimaryKey;
 
 public class PlantData {
 
-    @PrimaryKey(autoGenerate = true)
-    private int plantID;
+//    @PrimaryKey(autoGenerate = true)
+//    private int plantID;
 
     private String name;
     private String latinName;
@@ -19,13 +19,13 @@ public class PlantData {
         this.light = light;
     }
 
-    public int getPlantID() {
-        return plantID;
-    }
-
-    public void setPlantID(int plantID) {
-        this.plantID = plantID;
-    }
+//    public int getPlantID() {
+//        return plantID;
+//    }
+//
+//    public void setPlantID(int plantID) {
+//        this.plantID = plantID;
+//    }
 
     public String getName() {
         return name;
