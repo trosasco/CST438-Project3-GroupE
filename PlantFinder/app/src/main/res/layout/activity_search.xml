@@ -25,4 +25,11 @@
         android:text="Search"
         android:id="@+id/search_button" />
 
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="332dp" />
+
+
+
 </LinearLayout>
