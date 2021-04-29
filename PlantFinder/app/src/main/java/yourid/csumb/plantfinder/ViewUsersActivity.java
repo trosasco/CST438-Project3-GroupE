@@ -78,14 +78,17 @@ public class ViewUsersActivity extends AppCompatActivity {
     }
 
     //Deletes a user from the table
-    private void deleteItem(View view) {
+    public void deleteItem(View view) {
         mAccountDAO.delete((Account)view.getTag());
         refreshDisplay();
     }
 
     //Sends admin to the edit user page
     public void editItem(View view) {
-
+        Intent intent = EditUsersActivity.intentFactory(getApplicationContext());
+        intent.putExtra("view", (Account)view.getTag());
+        finish();
+        startActivity(intent);
     }
 
     private void getUsers(){

@@ -26,6 +26,10 @@
         <activity android:name=".ViewUsersActivity" />
         <activity android:name=".AddAccountActivity" />
         <activity android:name=".AdminActivity" />
+
+        <activity android:name=".EditUsersActivity" />
+
+
     </application>
 
 </manifest>
