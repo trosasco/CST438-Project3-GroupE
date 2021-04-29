@@ -37,4 +37,13 @@
     <string name="newPasswordHint">Enter the password here</string>
 
     <string name="adminButton">Admin</string>
+
+    <string name="PlantName">Plant Name</string>
+    <string name="PlantLatinName">Plant Latin Name</string>
+    <string name="PlantDifficulty">Plant Difficulty</string>
+    <string name="LightAmount">Light Amount</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
+
+
 </resources>
