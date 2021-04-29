@@ -29,8 +29,8 @@
 
     <string name="addUsers">Add user</string>
     <string name="editUser">Edit user</string>
-    <string name="newUsernameHint">Enter the username here</string>
-    <string name="newPasswordHint">Enter the password here</string>
+    <string name="newUsernameHint">Enter the new username here</string>
+    <string name="newPasswordHint">Enter the new password here</string>
 
     <string name="adminButton">Admin</string>
 </resources>
