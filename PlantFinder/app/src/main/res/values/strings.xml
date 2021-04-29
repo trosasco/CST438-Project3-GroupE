@@ -10,8 +10,27 @@
     <string name="enter_password">Enter your password here</string>
     <string name="login">Login</string>
 
+    <string name="profile">Profile</string>
     <string name="profileBio">Add something to your bio!</string>
     <string name="editProfile">Edit Profile</string>
+
+    <string name="welcomeAdmin">Welcome Admin!</string>
+    <string name="addPlants">Add Plants</string>
+    <string name="changeUsers">Edit user accounts</string>
+    <string name="what">What would you like to do?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment">Hello home fragment</string>
+    <string name="hello_search_fragment">Hello search fragment</string>
+    <string name="hello_account_fragment">Hello account fragment</string>
+
     <string name="bioHint">Start typing here</string>
     <string name="saveButton">Save</string>
+
+    <string name="addUsers">Add user</string>
+    <string name="editUser">Edit user</string>
+    <string name="newUsernameHint">Enter the username here</string>
+    <string name="newPasswordHint">Enter the password here</string>
+
+    <string name="adminButton">Admin</string>
 </resources>

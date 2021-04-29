@@ -1,5 +1,8 @@
 package yourid.csumb.plantfinder;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +11,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import yourid.csumb.plantfinder.model.Account;
+import yourid.csumb.plantfinder.model.AccountDao;
+
 public class SearchPage extends AppCompatActivity {
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String USERNAME = "username";
+    public static final String USER_ID_KEY = "yourid.csumb.plantfinder.model.userIdKey";
+
+    private SharedPreferences mPreference = null;
+
+    AccountDao mAccountDAO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +45,9 @@ public class SearchPage extends AppCompatActivity {
             }
 
         });
+    }
+
+    public static Intent intentFactory(Context context, int userId) {
+        return new Intent(context, SearchPage.class);
     }
 }
