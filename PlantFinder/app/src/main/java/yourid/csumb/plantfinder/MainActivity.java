@@ -160,16 +160,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private void addAllFragmentOnce() {
 
         manager.beginTransaction()
-                .add(R.id.flFragment, activeFragment)
+                .add(R.id.userFragment, activeFragment)
                 .commit();
 
         manager.beginTransaction()
-                .add(R.id.flFragment, searchPlants)
+                .add(R.id.userFragment, searchPlants)
                 .hide(searchPlants)
                 .commit();
 
         manager.beginTransaction()
-                .add(R.id.flFragment, profile)
+                .add(R.id.userFragment, profile)
                 .hide(profile)
                 .commit();
 
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 activeFragment = searchPlants;
                 break;
 
-            case R.id.person:
+            case R.id.account:
                 clearBackStack();
                 showHideFragment(profile);
                 activeFragment = profile;

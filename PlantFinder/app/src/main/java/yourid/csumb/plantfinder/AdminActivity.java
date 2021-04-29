@@ -21,12 +21,7 @@ public class AdminActivity extends AppCompatActivity {
         setTitle("Administrator Home");
 
         Button plantButton = (Button) findViewById(R.id.inventory_button);
-        plantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Go to show plants activity
-            }
-        });
+        plantButton.setOnClickListener(view -> addPlant());
 
         Button userButton = (Button) findViewById(R.id.user_button);
         userButton.setOnClickListener(new View.OnClickListener() {
@@ -40,5 +35,10 @@ public class AdminActivity extends AppCompatActivity {
 
     public static Intent intentFactory(Context context) {
         return new Intent(context, AdminActivity.class);
+    }
+
+    public void addPlant(){
+        Intent intent = new Intent(this, AddPlant.class);
+        startActivity(intent);
     }
 }
