@@ -13,44 +13,26 @@
         android:layout_height="122dp"
         android:text="@string/profileBio"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.311" />
 
     <TextView
         android:id="@+id/topTextView"
         android:layout_width="188dp"
         android:layout_height="53dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
+        app:layout_constraintBottom_toTopOf="@+id/textViewBio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="401dp"
-        android:layout_height="356dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/text_view_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000" />
-
-    </androidx.core.widget.NestedScrollView>
+        app:layout_constraintVertical_bias="0.157" />
 
     <Button
         android:id="@+id/editProfileButton"
@@ -63,6 +45,31 @@
         app:layout_constraintStart_toEndOf="@+id/topTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.47" />
+
+    <Button
+        android:id="@+id/listsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/lists"
+        app:layout_constraintBottom_toTopOf="@+id/postsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBio"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <Button
+        android:id="@+id/postsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/posts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBio"
+        app:layout_constraintVertical_bias="0.66" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

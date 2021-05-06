@@ -32,5 +32,8 @@
     <string name="newUsernameHint">Enter the new username here</string>
     <string name="newPasswordHint">Enter the new password here</string>
 
+    <string name="lists">Lists</string>
+    <string name="posts">Posts</string>
+
     <string name="adminButton">Admin</string>
 </resources>
