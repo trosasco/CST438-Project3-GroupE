@@ -27,10 +27,23 @@
     <string name="bioHint">Start typing here</string>
     <string name="saveButton">Save</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="addUsers">Add user</string>
     <string name="editUser">Edit user</string>
-    <string name="newUsernameHint">Enter the username here</string>
-    <string name="newPasswordHint">Enter the password here</string>
+    <string name="newUsernameHint">Enter the new username here</string>
+    <string name="newPasswordHint">Enter the new password here</string>
 
     <string name="adminButton">Admin</string>
+
+    <string name="PlantName">Plant Name</string>
+    <string name="PlantLatinName">Plant Latin Name</string>
+    <string name="PlantDifficulty">Plant Difficulty</string>
+    <string name="LightAmount">Light Amount</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
+
+
 </resources>

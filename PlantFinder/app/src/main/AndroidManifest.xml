@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
+        <activity android:name=".AddPlant"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".HomePageActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".CreateAccountActivity" />
@@ -26,6 +26,8 @@
         <activity android:name=".ViewUsersActivity" />
         <activity android:name=".AddAccountActivity" />
         <activity android:name=".AdminActivity" />
+
+        <activity android:name=".EditUsersActivity" />
 
 
     </application>
