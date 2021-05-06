@@ -38,6 +38,7 @@
 
     <string name="lists">Lists</string>
     <string name="posts">Posts</string>
+    <string name="deleteAcc">Delete Account</string>
 
     <string name="adminButton">Admin</string>
 
