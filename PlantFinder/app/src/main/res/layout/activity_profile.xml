@@ -11,15 +11,14 @@
         android:id="@+id/textViewBio"
         android:layout_width="296dp"
         android:layout_height="122dp"
-        android:layout_marginTop="40dp"
         android:text="@string/profileBio"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topTextView"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/topTextView"
@@ -33,18 +32,17 @@
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
-        android:layout_width="392dp"
-        android:layout_height="392dp"
+        android:layout_width="401dp"
+        android:layout_height="356dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/text_view_result"
@@ -61,10 +59,10 @@
         android:text="@string/editProfile"
         app:layout_constraintBottom_toTopOf="@+id/textViewBio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toEndOf="@+id/topTextView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.47" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
