@@ -26,8 +26,10 @@ public class ViewProfile extends AppCompatActivity {
 
     private TextView profileName;
     private TextView profileBio;
-    private TextView posts;
     private Button editProfile;
+
+    private Button lists;
+    private Button posts;
 
     private AccountDao mAccountDAO;
     private Account mAccount;
@@ -68,8 +70,9 @@ public class ViewProfile extends AppCompatActivity {
     public void wireupDisplay() {
         profileName = findViewById(R.id.topTextView);
         profileBio = findViewById(R.id.textViewBio);
-        posts = findViewById(R.id.text_view_result);
         editProfile = findViewById(R.id.editProfileButton);
+        lists = findViewById(R.id.listsButton);
+        posts = findViewById(R.id.postsButton);
     }
 
     private void getUsers(){
