@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     Button create;
     Button search;
     Button login;
+    Button createList;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String USERNAME = "username";
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         checkForUser();
 
         create = findViewById(R.id.createAcc);
+        createList = findViewById(R.id.createList);
         search = findViewById(R.id.search);
         login = findViewById(R.id.login);
 
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         addAllFragmentOnce();
 
         create.setOnClickListener(view -> createAccount());
+        createList.setOnClickListener(view -> createList());
         search.setOnClickListener(view -> searchPlants());
         login.setOnClickListener(view -> signIn());
     }
@@ -81,6 +84,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent startIntent = CreateAccountActivity.intentFactory(getApplicationContext());
+                startActivity(startIntent);
+            }
+        });
+    }
+
+    public void createList(){
+        createList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), CreateListActivity.class);
                 startActivity(startIntent);
             }
         });
