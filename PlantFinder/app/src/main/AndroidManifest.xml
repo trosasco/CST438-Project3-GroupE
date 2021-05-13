@@ -21,6 +21,7 @@
         <activity android:name=".HomePageActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".CreateListActivity" />
         <activity android:name=".SearchPage" />
         <activity android:name=".ViewProfile" />
         <activity android:name=".EditProfile" />
