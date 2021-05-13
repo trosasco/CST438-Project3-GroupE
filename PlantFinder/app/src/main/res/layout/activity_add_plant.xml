@@ -14,11 +14,11 @@
         android:text="@string/Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.708"
-        app:layout_constraintStart_toEndOf="@+id/cancelAddition"
+        app:layout_constraintStart_toEndOf="@+id/goBack"
         app:layout_constraintTop_toBottomOf="@+id/pLight" />
 
     <Button
-        android:id="@+id/cancelAddition"
+        android:id="@+id/goBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
