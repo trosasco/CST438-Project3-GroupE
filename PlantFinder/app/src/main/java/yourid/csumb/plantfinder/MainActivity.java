@@ -29,7 +29,7 @@ import yourid.csumb.plantfinder.model.AccountDatabase;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     Button create;
     Button search;
@@ -45,13 +45,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private SharedPreferences mPreference = null;
 
-    private HomeFragment home = new HomeFragment();
-    private SearchFragment searchPlants = new SearchFragment();
-    private ProfileFragment profile = new ProfileFragment();
-
-    private Fragment activeFragment = null;
-    private FragmentManager manager;
-    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +57,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         create = findViewById(R.id.createAcc);
         search = findViewById(R.id.search);
         login = findViewById(R.id.login);
-
-        bottomNavigationView = findViewById(R.id.bottomNavigationView); //step 7
-
-
-        setUpBottomNavigation();
-        addAllFragmentOnce();
 
         create.setOnClickListener(view -> createAccount());
         search.setOnClickListener(view -> searchPlants());
@@ -151,68 +138,4 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return intent;
     }
 
-    private void setUpBottomNavigation() {
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        manager = getSupportFragmentManager();
-        activeFragment = home;
-    }
-
-    private void addAllFragmentOnce() {
-
-        manager.beginTransaction()
-                .add(R.id.userFragment, activeFragment)
-                .commit();
-
-        manager.beginTransaction()
-                .add(R.id.userFragment, searchPlants)
-                .hide(searchPlants)
-                .commit();
-
-        manager.beginTransaction()
-                .add(R.id.userFragment, profile)
-                .hide(profile)
-                .commit();
-
-    }
-
-    private void showHideFragment(Fragment fragment) {
-        manager.beginTransaction()
-                .hide(activeFragment)
-                .show(fragment)
-                .commit();
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-
-            case R.id.home:
-                clearBackStack();
-                showHideFragment(home);
-                activeFragment = home;
-                break;
-
-            case R.id.search:
-                clearBackStack();
-                showHideFragment(searchPlants);
-                activeFragment = searchPlants;
-                break;
-
-            case R.id.account:
-                clearBackStack();
-                showHideFragment(profile);
-                activeFragment = profile;
-                break;
-
-        }
-        return true;
-    }
-
-
-    private void clearBackStack() {
-        FragmentManager fm = this.getSupportFragmentManager();
-        for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-            fm.popBackStack();
-        }
-    }
 }

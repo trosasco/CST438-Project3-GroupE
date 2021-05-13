@@ -65,6 +65,12 @@ public class ViewProfile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        posts.setOnClickListener(view -> addPost());
+    }
+
+    public void addPost(){
+        Intent intent = new Intent(this, NewPost.class);
+        startActivity(intent);
     }
 
     public void wireupDisplay() {
