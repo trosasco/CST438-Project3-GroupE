@@ -25,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import yourid.csumb.plantfinder.model.Account;
 import yourid.csumb.plantfinder.model.AccountDao;
@@ -39,6 +40,7 @@ public class SearchPage extends AppCompatActivity {
     private SharedPreferences mPreference = null;
 
     Button search;
+    TextView res;
     AccountDao mAccountDAO;
 
     @Override
@@ -63,22 +65,23 @@ public class SearchPage extends AppCompatActivity {
         EditText keywords = findViewById((R.id.search_entry));
         PlantData newPlant = new PlantData(keywords.toString(),  "", "", "");
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("Plants").document(keywords.toString());
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if(task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if(document.exists()) {
-                        Log.d(TAG, "found!" + document.getData());
+       // DocumentReference docRef = db.collection("Plants").document(keywords.getText().toString());
+        db.collection("Plants")
+                .whereEqualTo("name", keywords.getText().toString())
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Log.d(TAG, document.getId() + " -> " + document.getData());
+                            res = findViewById(R.id.results);
+                            res.setText(document.getData().toString());
+
+                        }
                     } else {
-                        Log.d(TAG, "No such document");
+                        Log.d(TAG, "Error getting documents: " , task.getException());
                     }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
+                });
+
 
     }
 
