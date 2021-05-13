@@ -83,10 +83,10 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
         //Create List
-        Button createListButton = (Button) findViewById(R.id.profileButton);
-        profileButton.setOnClickListener(v -> {
-            //Intent intent = CreateListActivity.intentFactory(this,user);
-            //startActivity(intent);
+        Button createListButton = (Button) findViewById(R.id.createListButton);
+        createListButton.setOnClickListener(v -> {
+            Intent intent = CreateListActivity.intentFactory(getApplicationContext());
+            startActivity(intent);
         });
 
         Button logoutButton = (Button) findViewById(R.id.logoutButton);

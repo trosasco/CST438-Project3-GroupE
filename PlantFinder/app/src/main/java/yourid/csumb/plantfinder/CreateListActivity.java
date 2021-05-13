@@ -1,5 +1,7 @@
 package yourid.csumb.plantfinder;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -96,6 +98,8 @@ public class CreateListActivity extends AppCompatActivity {
     private void getUserByUsername() {mAccount = mAccountDAO.getUserByUsername(mUsername); }
 
 
-
+    public static Intent intentFactory(Context context) {
+        return new Intent(context, CreateListActivity.class);
+    }
 
 }

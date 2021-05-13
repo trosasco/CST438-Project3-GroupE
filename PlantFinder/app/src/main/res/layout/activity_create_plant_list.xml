@@ -15,14 +15,14 @@
         android:id="@+id/new_listName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter_listName"
+        android:hint="Enter List Name"
         android:lines="1" />
 
     <EditText
         android:id="@+id/new_plants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter_plants"
+        android:hint="Enter plants(seperated by commas)"
         android:lines="1" />
 
     <Button
