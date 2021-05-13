@@ -51,6 +51,7 @@
     <string name="newPost">New Post</string>
     <string name="selectImage">Select An Image</string>
     <string name="caption">Caption</string>
+    <string name="goBack">Go Back</string>
 
 
 </resources>

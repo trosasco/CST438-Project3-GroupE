@@ -1,37 +1,28 @@
 package yourid.csumb.plantfinder;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
 import java.util.UUID;
 
 public class NewPost extends AppCompatActivity {
 
     EditText caption;
-    TextView imgName;
 
     Button selectImg;
-    Button cancel;
+    Button goBack;
     Button upload;
 
     ImageView IVPrevImg;
@@ -55,15 +46,14 @@ public class NewPost extends AppCompatActivity {
         fsdb = FirebaseFirestore.getInstance();
 
         caption = findViewById(R.id.caption);
-        imgName = findViewById(R.id.imageName);
 
         selectImg = findViewById(R.id.selectImage);
         IVPrevImg = findViewById(R.id.imageView);
         upload = findViewById(R.id.addPlant);
-        cancel = findViewById(R.id.cancelAddition);
+        goBack = findViewById(R.id.goBack);
 
         selectImg.setOnClickListener(view -> selectImage());
-        cancel.setOnClickListener(view -> goBack());
+        goBack.setOnClickListener(view -> goBack());
         upload.setOnClickListener(view -> uploadToFirebase());
     }
     public void goBack(){
@@ -145,7 +135,6 @@ public class NewPost extends AppCompatActivity {
             if (requestCode == SELECT_PICTURE) {
                 // Get the url of the image from data
                 filePath = data.getData();
-                imgName.setText(filePath.toString());
                 if (null != filePath) {
                     // update the preview image in the layout
                     IVPrevImg.setImageURI(filePath);

@@ -14,9 +14,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class AddPlant extends AppCompatActivity {
 
     private static final String TAG = "";
@@ -39,7 +36,7 @@ public class AddPlant extends AppCompatActivity {
         plantLight = findViewById(R.id.pLight);
 
         newPlant = findViewById(R.id.addPlant);
-        cancelAdd = findViewById(R.id.cancelAddition);
+        cancelAdd = findViewById(R.id.goBack);
 
         newPlant.setOnClickListener(view -> addNewPlant());
         cancelAdd.setOnClickListener(view -> goBack());
