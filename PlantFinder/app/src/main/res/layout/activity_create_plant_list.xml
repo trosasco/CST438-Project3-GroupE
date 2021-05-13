@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_launcher_foreground"
+    android:backgroundTint="#E6DBDB"
+    android:orientation="vertical"
+    android:padding="30dip">
+
+
+
+    <EditText
+        android:id="@+id/new_listName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter_listName"
+        android:lines="1" />
+
+    <EditText
+        android:id="@+id/new_plants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter_plants"
+        android:lines="1" />
+
+    <Button
+        android:id="@+id/enter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="create List" />
+</LinearLayout>

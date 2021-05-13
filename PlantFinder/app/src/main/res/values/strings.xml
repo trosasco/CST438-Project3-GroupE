@@ -36,6 +36,10 @@
     <string name="newUsernameHint">Enter the new username here</string>
     <string name="newPasswordHint">Enter the new password here</string>
 
+    <string name="lists">Lists</string>
+    <string name="posts">Posts</string>
+    <string name="deleteAcc">Delete Account</string>
+
     <string name="adminButton">Admin</string>
 
     <string name="PlantName">Plant Name</string>
