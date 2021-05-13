@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.google.gson.Gson;
 
@@ -15,6 +16,7 @@ import java.util.List;
 
 import yourid.csumb.plantfinder.model.Account;
 import yourid.csumb.plantfinder.model.AccountDao;
+import yourid.csumb.plantfinder.model.AccountDatabase;
 import yourid.csumb.plantfinder.model.PlantList;
 import yourid.csumb.plantfinder.model.PlantListDao;
 
@@ -47,6 +49,7 @@ public class CreateListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_plant_list);
 
+        getDataBase();
         createPlantList();
 
     }
@@ -83,6 +86,13 @@ public class CreateListActivity extends AppCompatActivity {
         });
     }
 
+
+    public void getDataBase(){
+        mAccountDAO = Room.databaseBuilder(this, AccountDatabase.class, AccountDatabase.DB_NAME)
+                .allowMainThreadQueries()
+                .build()
+                .getAccountDAO();
+    }
     private void getUserByUsername() {mAccount = mAccountDAO.getUserByUsername(mUsername); }
 
 

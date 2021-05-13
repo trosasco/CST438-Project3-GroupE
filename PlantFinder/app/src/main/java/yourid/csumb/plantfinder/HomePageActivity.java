@@ -82,6 +82,13 @@ public class HomePageActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //Create List
+        Button createListButton = (Button) findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(v -> {
+            //Intent intent = CreateListActivity.intentFactory(this,user);
+            //startActivity(intent);
+        });
+
         Button logoutButton = (Button) findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(view -> {
             clearUserFromIntent();
